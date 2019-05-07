@@ -4,18 +4,26 @@ import java.util.concurrent.Executor;
 
 public class ThreadExecutor implements Executor {
 
-    String threadType = null;
+   ExecutorType executorType;
 
-    public ThreadExecutor(String threadType){
-        this.threadType = threadType;
+    public ThreadExecutor(ExecutorType executorType){
+        this.executorType = executorType;
     }
 
     @Override public void execute(Runnable command){
-        if (threadType.equals("same")){
+        if (this.executorType == ExecutorType.SAME_THREAD) {
             command.run();
-        } else if (threadType.equals("diff")){
+        } else {
             new Thread(command).run();
         }
+    }
+
+    public ExecutorType getExecutorType(){
+        return executorType;
+    }
+
+    public void setExecutorType(ExecutorType executorType){
+        this.executorType = executorType;
     }
 
 }
