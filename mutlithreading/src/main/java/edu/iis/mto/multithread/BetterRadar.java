@@ -6,15 +6,15 @@ public class BetterRadar implements Runnable{
 
     private Executor executor;
     private PatriotBattery patriotBattery;
-    private int amountOfMisslesToFire;
+    private int amountOfMissilesToFire;
 
-    public BetterRadar(Executor executor, PatriotBattery patriotBattery, int amountOfMisslesToFire) {
+    public BetterRadar(Executor executor, PatriotBattery patriotBattery, int amountOfMissilesToFire) {
         this.executor = executor;
         this.patriotBattery = patriotBattery;
-        this.amountOfMisslesToFire = amountOfMisslesToFire;
+        this.amountOfMissilesToFire = amountOfMissilesToFire;
     }
 
-    public void notice(Scud enemyMissle){
+    public void notice(Scud enemyMissile){
         launchPatriot();
     }
 
@@ -24,7 +24,7 @@ public class BetterRadar implements Runnable{
 
     @Override
     public void run() {
-        for(int i = 0; i < amountOfMisslesToFire; i++){
+        for(int i = 0; i < amountOfMissilesToFire; i++){
             patriotBattery.launchPatriot();
         }
     }

@@ -7,7 +7,7 @@ public class Radar {
 		this.battery = battery;
 	}
 
-	public void notice(Scud enemyMissle) {
+	public void notice(Scud enemyMissile) {
 		launchPatriot();
 	}
 

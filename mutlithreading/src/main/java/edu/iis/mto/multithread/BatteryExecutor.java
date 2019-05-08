@@ -4,19 +4,19 @@ import java.util.concurrent.Executor;
 
 public class BatteryExecutor implements Executor {
 
-    private int launchOption;
+    private LaunchOption launchOption;
 
-    public BatteryExecutor(int launchOption) {
+    public BatteryExecutor(LaunchOption launchOption) {
         this.launchOption = launchOption;
     }
 
     @Override
     public void execute(Runnable command) {
         switch (launchOption){
-            case 0 :
+            case THIS_THREAD:
                 command.run();
                 break;
-            case 1 :
+            case ANOTHER_THREAD:
                 new Thread(command).run();
                 break;
             default:
