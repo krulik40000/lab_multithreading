@@ -1,11 +1,9 @@
 package edu.iis.mto.multithread;
 
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 import org.mockito.Mockito;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class BetterRadarTest {
+public class BetterRadarTest {
 
     public PatriotBattery patriotBattery = Mockito.mock(PatriotBattery.class);
 
