@@ -1,6 +1,8 @@
 package edu.iis.mto.multithread;
 
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.jupiter.api.RepeatedTest;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -11,6 +13,8 @@ public class BetterRadarTest {
 
 
 
+
+    @RepeatedTest(5)
     @Test
     public void launch_patriot_n_times_when_notice_enemy_missle_on_different_thread(){
 
