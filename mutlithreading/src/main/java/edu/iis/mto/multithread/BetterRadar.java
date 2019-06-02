@@ -10,9 +10,10 @@ public class BetterRadar implements Runnable {
 
 
 
-        public BetterRadar(PatriotBattery battery, int numberOfRockets) {
+        public BetterRadar(PatriotBattery battery, int numberOfRockets, Executor executor) {
             this.battery = battery;
             this.numberOfRockets = numberOfRockets;
+            this.executor = executor;
         }
 
         public void notice(Scud enemyMissle) {
