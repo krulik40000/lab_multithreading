@@ -4,7 +4,7 @@ import java.util.concurrent.Executor;
 
 public class ThreadExecutor implements Executor {
 
-    ThreadExecutorOption launchOption;
+    private ThreadExecutorOption launchOption;
 
     public ThreadExecutor(ThreadExecutorOption launchOption) {
         this.launchOption = launchOption;
