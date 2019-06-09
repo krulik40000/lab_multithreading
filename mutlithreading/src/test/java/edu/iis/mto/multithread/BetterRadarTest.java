@@ -14,7 +14,7 @@ public class BetterRadarTest {
     @RepeatRule.Repeat(times = 20)
     public void launchMisslesWhenNoticedEnemyMissleTest(){
         PatriotBattery patriotBattery = mock(PatriotBattery.class);
-        BetterRadar betterRadar = new BetterRadar(new BatteryExecutor(LaunchOption.ANOTHER_THREAD), patriotBattery, 10);
+        BetterRadar betterRadar = new BetterRadar(new BatteryExecutor(LaunchOption.THIS_THREAD), patriotBattery, 10);
         betterRadar.notice(new Scud());
         verify(patriotBattery, times(10)).launchPatriot();
     }
