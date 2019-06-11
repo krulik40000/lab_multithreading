@@ -1,9 +1,11 @@
 package edu.iis.mto.multithread;
 
+import org.junit.jupiter.api.Test;
+
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 
-import org.junit.Test;
+
 
 public class RadarTest {
 
