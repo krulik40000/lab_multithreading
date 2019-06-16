@@ -16,4 +16,11 @@ public class BetterRadarTest {
         Mockito.verify(battery, Mockito.times(1)).launchPatriot();
     }
 
+    @Test
+    public void launchPatriotFiveTimesInDifferentThread(){
+        BetterRadar betterRadar = new BetterRadar(battery, 5,
+                new MyRocketExecutor(MyRocketExecutor.RocketExecutorType.OTHER_THREAD));
+        betterRadar.notice(new Scud());
+        Mockito.verify(battery, Mockito.times(5)).launchPatriot();
+    }
 }
