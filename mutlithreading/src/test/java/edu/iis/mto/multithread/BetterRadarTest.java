@@ -13,6 +13,7 @@ public class BetterRadarTest {
     }
 
     @Test
+    @RepeatRule.Repeat(times = 10)
     public void launchPatriotOnlyOneTimeInTheSameThread(){
         BetterRadar betterRadar = new BetterRadar(battery, 1,
                 new MyRocketExecutor(MyRocketExecutor.RocketExecutorType.SAME_THREAD));
