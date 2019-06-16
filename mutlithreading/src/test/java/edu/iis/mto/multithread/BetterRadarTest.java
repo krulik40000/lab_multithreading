@@ -1,12 +1,16 @@
 package edu.iis.mto.multithread;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mockito;
 
 public class BetterRadarTest {
+    public PatriotBattery battery;
 
-
-    public PatriotBattery battery = Mockito.mock(PatriotBattery.class);
+    @Before
+    public void setUp() {
+        battery = Mockito.mock(PatriotBattery.class);
+    }
 
     @Test
     public void launchPatriotOnlyOneTimeInTheSameThread(){
