@@ -7,7 +7,6 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.runners.MockitoJUnitRunner;
 
-import static org.junit.Assert.*;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.times;
@@ -29,8 +28,8 @@ public class BetterRadarTest {
     @RepeatRule.Repeat(times = 20)
     public void launchTwoRocketsInTestThread() {
 
-        RocketPatriot patriot = new RocketPatriot(false);
-        BetterRadar radar = new BetterRadar(batteryMock, patriot, 2);
+        RocketLauncher launcher = new RocketLauncher(false);
+        BetterRadar radar = new BetterRadar(batteryMock, launcher, 2);
 
         radar.notice(new Scud());
         verify(batteryMock, times(2)).launchPatriot();
